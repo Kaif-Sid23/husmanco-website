@@ -1,0 +1,141 @@
+.contact{
+padding:100px 0;
+background:#f8fbff;
+}
+
+.contact .section-heading{
+text-align:center;
+max-width:650px;
+margin:0 auto 60px;
+}
+
+.contact .section-heading span{
+display:inline-block;
+padding:8px 18px;
+background:#edf4fd;
+color:#1d4f91;
+border-radius:30px;
+font-weight:600;
+font-size:13px;
+letter-spacing:1px;
+margin-bottom:16px;
+}
+
+.contact .section-heading h2{
+font-size:40px;
+color:#14213d;
+margin-bottom:14px;
+}
+
+.contact .section-heading p{
+color:#666;
+font-size:16px;
+}
+
+.contact-container{
+width:90%;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:50px;
+}
+
+.contact-info{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.info-card{
+display:flex;
+gap:16px;
+background:#fff;
+padding:22px;
+border-radius:14px;
+box-shadow:0 6px 20px rgba(23,59,114,0.06);
+}
+
+.info-card svg{
+font-size:22px;
+color:#173b72;
+flex-shrink:0;
+margin-top:4px;
+}
+
+.info-card h4{
+color:#14213d;
+margin-bottom:6px;
+font-size:16px;
+}
+
+.info-card p, .info-card a{
+color:#555;
+font-size:14.5px;
+line-height:1.6;
+text-decoration:none;
+}
+
+.info-card a:hover{
+color:#173b72;
+}
+
+.whatsapp-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:#25D366;
+color:#fff;
+padding:16px;
+border-radius:12px;
+font-weight:600;
+text-decoration:none;
+font-size:16px;
+}
+
+.contact-form{
+background:#fff;
+padding:40px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(23,59,114,0.08);
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:14px 16px;
+border:1px solid #dfe6ee;
+border-radius:10px;
+font-family:'Poppins',sans-serif;
+font-size:15px;
+outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#173b72;
+}
+
+.contact-form button{
+padding:16px;
+background:#173b72;
+color:#fff;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.contact-form button:hover{
+background:#0f2954;
+}
+
+@media(max-width:900px){
+.contact-container{
+grid-template-columns:1fr;
+}
+}

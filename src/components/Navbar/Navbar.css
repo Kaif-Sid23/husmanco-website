@@ -1,0 +1,791 @@
+/* ===========================================================
+   PREMIUM NAVBAR
+   H USMAN & CO.
+   Developed with ❤️
+=========================================================== */
+
+:root{
+    --primary:#0B1F3A;
+    --secondary:#D4AF37;
+    --accent:#1F4E79;
+    --white:#ffffff;
+    --black:#111111;
+    --text:#4F4F4F;
+    --light:#F8FAFC;
+    --border:#E7ECF2;
+
+    --shadow-sm:0 5px 20px rgba(0,0,0,.08);
+    --shadow-md:0 15px 35px rgba(0,0,0,.12);
+    --shadow-lg:0 25px 60px rgba(0,0,0,.18);
+
+    --transition:.35s ease;
+    --radius:12px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================================================
+   TOP BAR
+=========================================================== */
+
+.top-bar{
+
+    background:linear-gradient(
+        90deg,
+        #0B1F3A,
+        #163B6D
+    );
+
+    color:#fff;
+
+    height:54px;
+
+    display:flex;
+
+    align-items:center;
+
+    font-size:14px;
+
+    position:relative;
+
+    z-index:1002;
+
+}
+
+.top-container{
+
+    width:min(94%,1450px);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.top-left,
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.top-left{
+
+    gap:10px;
+
+    font-weight:400;
+
+}
+
+.top-left svg{
+
+    color:var(--secondary);
+
+    font-size:15px;
+
+}
+
+.top-right{
+
+    gap:30px;
+
+}
+
+.top-right a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    transition:var(--transition);
+
+}
+
+.top-right a:hover{
+
+    color:var(--secondary);
+
+}
+
+.top-right svg{
+
+    color:var(--secondary);
+
+}
+
+/* ===========================================================
+   NAVBAR
+=========================================================== */
+
+.navbar{
+
+    position:sticky;
+
+    top:0;
+
+    width:100%;
+
+    height:92px;
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    transition:all .35s ease;
+
+    z-index:1000;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.05);
+
+}
+
+.navbar-scrolled{
+
+    height:78px;
+
+    background:rgba(255,255,255,.88);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.10);
+
+}
+
+.nav-container{
+
+    width:min(94%,1450px);
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ===========================================================
+   LOGO
+=========================================================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.logo img{
+
+    height:60px;
+
+    transition:.35s ease;
+
+}
+
+.navbar-scrolled .logo img{
+
+    height:52px;
+
+}
+
+/* ===========================================================
+   NAVIGATION
+=========================================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:34px;
+
+    list-style:none;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:var(--primary);
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+/* Hover */
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--secondary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--secondary);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* Active */
+
+.active-link{
+
+    color:var(--secondary)!important;
+
+}
+
+.active-link::after{
+
+    width:100%!important;
+
+}
+
+/* ===========================================================
+   DROPDOWN
+=========================================================== */
+
+.dropdown-parent{
+
+    position:relative;
+
+}
+
+.dropdown-trigger{
+
+    border:none;
+
+    background:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:16px;
+
+    color:var(--primary);
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.dropdown-trigger:hover{
+
+    color:var(--secondary);
+
+}
+
+.dropdown-icon{
+
+    font-size:12px;
+
+    transition:.3s;
+
+}
+
+.dropdown-icon.rotate{
+
+    transform:rotate(180deg);
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:calc(100% + 20px);
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    min-width:285px;
+
+    background:white;
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow-md);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s ease;
+
+    overflow:hidden;
+
+    z-index:500;
+
+}
+
+.dropdown-menu.show{
+
+    top:calc(100% + 12px);
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.dropdown-menu li{
+
+    width:100%;
+
+}
+
+.dropdown-menu li a{
+
+    display:block;
+
+    padding:15px 24px;
+
+    color:var(--primary);
+
+    transition:.3s;
+
+}
+
+.dropdown-menu li a:hover{
+
+    background:#F5F8FC;
+
+    padding-left:32px;
+
+    color:var(--secondary);
+
+}
+/* ===========================================================
+   CTA BUTTON
+=========================================================== */
+
+.schedule-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 30px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #D4AF37,
+        #E8C55A
+    );
+
+    color:#0B1F3A;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 25px rgba(212,175,55,.35);
+
+    white-space:nowrap;
+
+}
+
+.schedule-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 35px rgba(212,175,55,.45);
+
+    color:#0B1F3A;
+
+}
+
+/* ===========================================================
+   MOBILE MENU BUTTON
+=========================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ===========================================================
+   MOBILE RESPONSIVE
+=========================================================== */
+
+@media (max-width:992px){
+
+.top-bar{
+
+display:none;
+
+}
+
+.navbar{
+
+height:82px;
+
+}
+
+.nav-container{
+
+width:92%;
+
+}
+
+.schedule-btn{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+z-index:1002;
+
+}
+
+.nav-links{
+
+position:fixed;
+
+top:82px;
+
+left:-100%;
+
+width:100%;
+
+height:calc(100vh - 82px);
+
+background:white;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+justify-content:flex-start;
+
+padding:40px 30px;
+
+gap:22px;
+
+transition:.4s ease;
+
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+overflow-y:auto;
+
+}
+
+.nav-links.active{
+
+left:0;
+
+}
+
+.nav-links li{
+
+width:100%;
+
+}
+
+.nav-links a{
+
+font-size:18px;
+
+display:block;
+
+width:100%;
+
+padding:10px 0;
+
+}
+
+.dropdown-parent{
+
+width:100%;
+
+}
+
+.dropdown-trigger{
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+padding:10px 0;
+
+font-size:18px;
+
+}
+
+.dropdown-menu{
+
+position:static;
+
+transform:none;
+
+opacity:1;
+
+visibility:visible;
+
+max-height:0;
+
+overflow:hidden;
+
+box-shadow:none;
+
+border-radius:10px;
+
+margin-top:10px;
+
+transition:max-height .35s ease;
+
+background:#F8FAFC;
+
+}
+
+.dropdown-menu.show{
+
+max-height:500px;
+
+padding:10px 0;
+
+}
+
+.dropdown-menu li a{
+
+padding:14px 18px;
+
+font-size:15px;
+
+}
+
+.dropdown-menu li a:hover{
+
+padding-left:26px;
+
+}
+
+}
+
+/* ===========================================================
+   TABLETS
+=========================================================== */
+
+@media (max-width:768px){
+
+.logo img{
+
+height:50px;
+
+}
+
+.navbar{
+
+height:76px;
+
+}
+
+.nav-links{
+
+top:76px;
+
+height:calc(100vh - 76px);
+
+}
+
+}
+
+/* ===========================================================
+   SMALL MOBILES
+=========================================================== */
+
+@media (max-width:480px){
+
+.logo img{
+
+height:46px;
+
+}
+
+.nav-container{
+
+width:90%;
+
+}
+
+.nav-links{
+
+padding:30px 22px;
+
+gap:18px;
+
+}
+
+.nav-links a{
+
+font-size:17px;
+
+}
+
+.dropdown-trigger{
+
+font-size:17px;
+
+}
+
+}
+
+/* ===========================================================
+   SMOOTH ANIMATIONS
+=========================================================== */
+
+.logo img,
+
+.schedule-btn,
+
+.nav-links a,
+
+.dropdown-trigger,
+
+.menu-toggle{
+
+transition:all .35s ease;
+
+}
+
+/* ===========================================================
+   ACCESSIBILITY
+=========================================================== */
+
+button:focus-visible,
+a:focus-visible{
+
+outline:3px solid rgba(212,175,55,.5);
+
+outline-offset:4px;
+
+border-radius:6px;
+
+}
+
+/* ===========================================================
+   PREMIUM FINISH
+=========================================================== */
+
+.navbar::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:100%;
+
+height:1px;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(212,175,55,.45),
+transparent
+);
+
+}
