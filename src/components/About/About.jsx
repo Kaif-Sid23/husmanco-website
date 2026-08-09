@@ -5,15 +5,24 @@ function About() {
   return (
     <section className="about" id="about">
 
+      {/* =====================================================
+          SECTION HEADING
+      ===================================================== */}
+
       <div className="section-heading">
         <span>ABOUT US</span>
         <h2>Company Overview</h2>
       </div>
 
+
+      {/* =====================================================
+          COMPANY OVERVIEW
+      ===================================================== */}
+
       <div className="about-overview">
 
         <p>
-          H Usman & Co., Chartered Accountants is a professionally managed
+          H Usman &amp; Co., Chartered Accountants is a professionally managed
           firm established in June 2020 with a vision to provide
           comprehensive, value-driven and practical financial, taxation,
           assurance and advisory services to businesses across diverse
@@ -36,7 +45,7 @@ function About() {
         </p>
 
         <p>
-          At H Usman & Co., we believe that professional services should
+          At H Usman &amp; Co., we believe that professional services should
           not merely focus on statutory compliance but should also
           contribute to the overall growth, efficiency and sustainability
           of the client's business. Our approach combines technical
@@ -47,9 +56,14 @@ function About() {
 
       </div>
 
+
+      {/* =====================================================
+          BANKING EXPERIENCE / WHY IT MATTERS
+      ===================================================== */}
+
       <div className="about-container">
 
-        {/* Left */}
+        {/* LEFT — EXPERIENCE VISUAL */}
 
         <div className="about-image">
 
@@ -60,7 +74,8 @@ function About() {
 
         </div>
 
-        {/* Right */}
+
+        {/* RIGHT — CONTENT */}
 
         <div className="about-content">
 
@@ -78,31 +93,44 @@ function About() {
             read your numbers.
           </p>
 
+
+          {/* =================================================
+              SERVICE / EXPERTISE GRID
+          ================================================= */}
+
           <div className="about-grid">
 
             <div className="about-box">
-              <FaCheckCircle />
-              <span>Income Tax & GST</span>
+              <FaCheckCircle aria-hidden="true" />
+              <span>Income Tax &amp; GST</span>
             </div>
 
             <div className="about-box">
-              <FaCheckCircle />
-              <span>Audit & Assurance</span>
+              <FaCheckCircle aria-hidden="true" />
+              <span>Audit &amp; Assurance</span>
             </div>
 
             <div className="about-box">
-              <FaCheckCircle />
-              <span>ROC & Corporate Compliance</span>
+              <FaCheckCircle aria-hidden="true" />
+              <span>ROC &amp; Corporate Compliance</span>
             </div>
 
             <div className="about-box">
-              <FaCheckCircle />
-              <span>Banking & Risk Advisory</span>
+              <FaCheckCircle aria-hidden="true" />
+              <span>Banking &amp; Risk Advisory</span>
             </div>
 
           </div>
 
-          <a href="#founder" className="about-btn">
+
+          {/* =================================================
+              CTA
+          ================================================= */}
+
+          <a
+            href="#founder"
+            className="about-btn"
+          >
             Meet the Founder
           </a>
 
@@ -110,25 +138,37 @@ function About() {
 
       </div>
 
+
+      {/* =====================================================
+          VISION & MISSION
+      ===================================================== */}
+
       <div className="vision-mission">
 
         <div className="vm-card">
+
           <h4>Our Vision</h4>
+
           <p>
             To be recognized as a trusted professional services firm
             providing innovative, reliable and value-added solutions
             that contribute to the growth and success of our clients.
           </p>
+
         </div>
 
+
         <div className="vm-card">
+
           <h4>Our Mission</h4>
+
           <p>
             To deliver high-quality assurance, taxation, compliance and
             advisory services through technical excellence, industry
             knowledge, ethical practices and a deep commitment to client
             success.
           </p>
+
         </div>
 
       </div>

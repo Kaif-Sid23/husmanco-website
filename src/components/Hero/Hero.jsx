@@ -255,11 +255,12 @@ function Hero() {
             {/* Founder Image */}
 
             <img
-              src={founder}
-              alt="Mr. Hanif Usman - Chartered Accountant"
-              className="founder-image"
-            />
-
+src={founder}
+alt="Portrait of Mr. Hanif Usman, Chartered Accountant"
+className="founder-image"
+loading="eager"
+decoding="async"
+/>
             {/* Experience Card */}
 
             <div className="floating-card experience-card">
