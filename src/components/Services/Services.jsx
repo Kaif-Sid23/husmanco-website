@@ -7,7 +7,7 @@ import {
   FaBuilding,
   FaUniversity,
   FaShieldAlt,
-  FaSearchDollar,
+  
   FaChevronDown,
 } from "react-icons/fa";
 
