@@ -8,86 +8,171 @@ import {
 
 function WhyChooseUs() {
   return (
-    <section className="why-us" id="whyus">
-
+    <section className="why-choose-us" id="why-choose-us">
       <div className="why-container">
 
-        {/* Left Side */}
+        {/* =====================================================
+            LEFT SIDE — EXPERIENCE PANEL
+        ====================================================== */}
 
         <div className="why-image">
 
-          <div className="floating-card">
+          {/* Decorative background elements */}
+          <div className="why-image-glow"></div>
+          <div className="why-image-pattern"></div>
 
-            <h2>21+</h2>
+          <div className="why-experience-content">
+            <span className="why-experience-label">
+              PROFESSIONAL EXPERIENCE
+            </span>
 
-            <p>Years of Combined Expertise</p>
+            <div className="floating-card">
+              <h2>21+</h2>
+              <p>Years of Combined Expertise</p>
+            </div>
 
+            <div className="why-experience-caption">
+              <span>Banking</span>
+              <span>Finance</span>
+              <span>Risk</span>
+              <span>Compliance</span>
+            </div>
           </div>
 
         </div>
 
-        {/* Right Side */}
+
+        {/* =====================================================
+            RIGHT SIDE — CONTENT
+        ====================================================== */}
 
         <div className="why-content">
 
-          <span>WHY CHOOSE US</span>
+          <span className="why-section-tag">
+            WHY CHOOSE US
+          </span>
 
           <h2>
             Your Trusted Financial Partner For Every Stage Of Growth
           </h2>
 
-          <p>
+          <p className="why-intro">
             At CA Husman & Co., we combine technical expertise with
             personalized attention to deliver financial solutions that help
             businesses grow with confidence.
           </p>
 
+
+          {/* =================================================
+              FEATURES
+          ================================================= */}
+
           <div className="features">
 
+            {/* Feature 1 */}
             <div className="feature">
-              <FaUserTie />
-              <div>
-                <h4>Experienced Professionals</h4>
-                <p>Qualified Chartered Accountants with years of expertise.</p>
+
+              <div className="feature-icon">
+                <FaUserTie />
               </div>
+
+              <div className="feature-content">
+
+                <h4>
+                  Experienced Professionals
+                </h4>
+
+                <p>
+                  Qualified Chartered Accountants with years of expertise.
+                </p>
+
+              </div>
+
             </div>
 
+
+            {/* Feature 2 */}
             <div className="feature">
-              <FaShieldAlt />
-              <div>
-                <h4>Complete Confidentiality</h4>
-                <p>Your business data is always secure and protected.</p>
+
+              <div className="feature-icon">
+                <FaShieldAlt />
               </div>
+
+              <div className="feature-content">
+
+                <h4>
+                  Complete Confidentiality
+                </h4>
+
+                <p>
+                  Your business data is always secure and protected.
+                </p>
+
+              </div>
+
             </div>
 
+
+            {/* Feature 3 */}
             <div className="feature">
-              <FaClock />
-              <div>
-                <h4>On-Time Compliance</h4>
-                <p>Never miss statutory deadlines again.</p>
+
+              <div className="feature-icon">
+                <FaClock />
               </div>
+
+              <div className="feature-content">
+
+                <h4>
+                  On-Time Compliance
+                </h4>
+
+                <p>
+                  Never miss statutory deadlines again.
+                </p>
+
+              </div>
+
             </div>
 
+
+            {/* Feature 4 */}
             <div className="feature">
-              <FaChartLine />
-              <div>
-                <h4>Business Growth</h4>
-                <p>Strategic advice for long-term financial success.</p>
+
+              <div className="feature-icon">
+                <FaChartLine />
               </div>
+
+              <div className="feature-content">
+
+                <h4>
+                  Business Growth
+                </h4>
+
+                <p>
+                  Strategic advice for long-term financial success.
+                </p>
+
+              </div>
+
             </div>
 
           </div>
 
-          <a href="#services" className="learn-more-btn">
 
+          {/* =================================================
+              CTA
+          ================================================= */}
+
+          <a
+            href="#services"
+            className="learn-more-btn"
+          >
             Learn More
-
           </a>
 
         </div>
 
       </div>
-
     </section>
   );
 }

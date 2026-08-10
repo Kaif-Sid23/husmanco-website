@@ -1,193 +1,1012 @@
-.why-us{
+/* ==========================================================
+   WHY CHOOSE US
+   H USMAN & CO.
+   Responsive: Desktop / Laptop / Tablet / Mobile
+========================================================== */
 
-padding:120px 0;
-
-background:#fff;
-
+.why-choose-us {
+    width: 100%;
+    padding: 120px 0;
+    background: #ffffff;
+    overflow: hidden;
 }
 
-.why-container{
 
-width:90%;
+/* ==========================================================
+   MAIN CONTAINER
+========================================================== */
 
-max-width:1300px;
+.why-container {
+    width: min(90%, 1300px);
+    margin: 0 auto;
 
-margin:auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 
-display:grid;
+    gap: 70px;
 
-grid-template-columns:1fr 1fr;
-
-gap:80px;
-
-align-items:center;
-
+    align-items: center;
 }
 
-.why-image{
 
-height:600px;
+/* ==========================================================
+   LEFT EXPERIENCE PANEL
+========================================================== */
 
-border-radius:25px;
+.why-image {
+    width: 100%;
+    min-height: 600px;
 
-background:linear-gradient(135deg,#dceeff,#f7fbff);
+    position: relative;
 
-position:relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 
-overflow:hidden;
+    padding: 40px;
 
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #dceeff 0%,
+            #eef6ff 50%,
+            #f8fbff 100%
+        );
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(23, 59, 114, 0.04);
+
+    isolation: isolate;
 }
 
-.floating-card{
 
-position:absolute;
+/* ==========================================================
+   DECORATIVE BACKGROUND
+========================================================== */
 
-bottom:40px;
+.why-image-glow {
+    position: absolute;
 
-left:40px;
+    width: 320px;
+    height: 320px;
 
-background:white;
+    top: -120px;
+    right: -100px;
 
-padding:25px 35px;
+    border-radius: 50%;
 
-border-radius:15px;
+    background: rgba(255, 255, 255, 0.65);
 
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+    filter: blur(4px);
 
+    z-index: -1;
 }
 
-.floating-card h2{
 
-font-size:48px;
+.why-image-pattern {
+    position: absolute;
 
-color:#173b72;
+    inset: 0;
 
-margin-bottom:5px;
+    background-image:
+        linear-gradient(
+            rgba(23, 59, 114, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(23, 59, 114, 0.035) 1px,
+            transparent 1px
+        );
 
+    background-size: 38px 38px;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    z-index: -1;
 }
 
-.floating-card p{
 
-color:#555;
+/* ==========================================================
+   EXPERIENCE CONTENT
+========================================================== */
 
+.why-experience-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-.why-content span{
 
-display:inline-block;
+.why-experience-label {
+    display: inline-flex;
 
-background:#eef4fb;
+    align-items: center;
+    justify-content: center;
 
-padding:10px 18px;
+    padding: 9px 18px;
 
-border-radius:30px;
+    margin-bottom: 25px;
 
-color:#173b72;
+    border-radius: 50px;
 
-font-weight:600;
+    background: rgba(255, 255, 255, 0.72);
 
-margin-bottom:20px;
+    border: 1px solid rgba(23, 59, 114, 0.08);
 
+    color: #173b72;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-align: center;
 }
 
-.why-content h2{
 
-font-size:48px;
+/* ==========================================================
+   EXPERIENCE CARD
+   Scoped specifically to Why Choose Us
+   so Hero floating cards are NOT affected.
+========================================================== */
 
-line-height:1.2;
+.why-image .floating-card {
+    position: relative;
 
-margin-bottom:25px;
+    left: auto;
+    bottom: auto;
 
-color:#1f2937;
+    width: min(100%, 380px);
 
+    padding: 38px 35px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 60px rgba(23, 59, 114, 0.14);
+
+    z-index: 3;
 }
 
-.why-content p{
 
-font-size:18px;
+.why-image .floating-card h2 {
+    margin: 0 0 8px;
 
-line-height:1.8;
+    color: #173b72;
 
-color:#666;
+    font-size: clamp(42px, 4vw, 58px);
 
-margin-bottom:40px;
+    line-height: 1;
 
+    font-weight: 700;
 }
 
-.features{
 
-display:grid;
+.why-image .floating-card p {
+    margin: 0;
 
-gap:25px;
+    color: #555;
 
-margin-bottom:40px;
+    font-size: 17px;
 
+    line-height: 1.6;
+
+    font-weight: 500;
 }
 
-.feature{
 
-display:flex;
+/* ==========================================================
+   EXPERIENCE CAPTION TAGS
+========================================================== */
 
-gap:20px;
+.why-experience-caption {
+    display: flex;
 
-align-items:flex-start;
+    flex-wrap: wrap;
 
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
 }
 
-.feature svg{
 
-font-size:26px;
+.why-experience-caption span {
+    padding: 8px 14px;
 
-color:#173b72;
+    background: rgba(255, 255, 255, 0.75);
 
-margin-top:6px;
+    border: 1px solid rgba(23, 59, 114, 0.08);
 
+    border-radius: 50px;
+
+    color: #173b72;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
 }
 
-.feature h4{
 
-font-size:22px;
+/* ==========================================================
+   RIGHT CONTENT
+========================================================== */
 
-margin-bottom:6px;
+.why-content {
+    min-width: 0;
 
+    width: 100%;
 }
 
-.feature p{
 
-margin:0;
+/* ==========================================================
+   SECTION TAG
+========================================================== */
 
-font-size:16px;
+.why-section-tag {
+    display: inline-flex;
 
-line-height:1.7;
+    align-items: center;
 
+    padding: 10px 20px;
+
+    margin-bottom: 22px;
+
+    background: #eef4fb;
+
+    border-radius: 50px;
+
+    color: #173b72;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
 }
 
-.why-content button,
-.learn-more-btn{
-text-decoration:none;
-display:inline-block;
 
-background:#173b72;
+/* ==========================================================
+   HEADING
+========================================================== */
 
-color:white;
+.why-content > h2 {
+    margin: 0 0 25px;
 
-border:none;
+    color: #1f2937;
 
-padding:16px 35px;
+    font-size: clamp(2.5rem, 4.2vw, 4rem);
 
-border-radius:10px;
+    line-height: 1.12;
 
-font-size:16px;
+    font-weight: 700;
 
-cursor:pointer;
+    letter-spacing: -0.8px;
 
-transition:.3s;
-
+    max-width: 760px;
 }
 
-.why-content button:hover,
-.learn-more-btn:hover{
 
-background:#0d2d5c;
+/* ==========================================================
+   INTRO
+========================================================== */
 
+.why-intro {
+    max-width: 700px;
+
+    margin: 0 0 40px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   FEATURES
+========================================================== */
+
+.features {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================================
+   FEATURE CARD
+========================================================== */
+
+.feature {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: #f8fbff;
+
+    border: 1px solid #edf3fa;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.feature:hover {
+    transform: translateY(-4px);
+
+    border-color: #dce8f5;
+
+    box-shadow:
+        0 15px 35px rgba(23, 59, 114, 0.08);
+}
+
+
+/* ==========================================================
+   FEATURE ICON
+========================================================== */
+
+.feature-icon {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #173b72;
+
+    color: #ffffff;
+
+    font-size: 19px;
+}
+
+
+.feature-icon svg {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    margin: 0;
+}
+
+
+/* ==========================================================
+   FEATURE CONTENT
+========================================================== */
+
+.feature-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.feature-content h4 {
+    margin: 0 0 7px;
+
+    color: #173b72;
+
+    font-size: 19px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+
+.feature-content p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   LEARN MORE BUTTON
+========================================================== */
+
+.learn-more-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 15px 34px;
+
+    background: #173b72;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.learn-more-btn:hover {
+    background: #0d2d5c;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(23, 59, 114, 0.2);
+}
+
+
+/* ==========================================================
+   LARGE LAPTOP
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .why-choose-us {
+        padding: 100px 0;
+    }
+
+    .why-container {
+        width: min(92%, 1100px);
+
+        gap: 50px;
+    }
+
+    .why-image {
+        min-height: 520px;
+
+        padding: 30px;
+    }
+
+    .why-content > h2 {
+        font-size: clamp(2.4rem, 4vw, 3.4rem);
+    }
+
+    .features {
+        gap: 18px;
+    }
+
+    .feature {
+        padding: 18px;
+    }
+}
+
+
+/* ==========================================================
+   TABLET — 992px
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .why-choose-us {
+        padding: 90px 0;
+    }
+
+    .why-container {
+        width: min(92%, 760px);
+
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    /* Experience panel becomes a compact horizontal
+       visual instead of a giant blank block. */
+
+    .why-image {
+        min-height: 360px;
+
+        width: 100%;
+
+        padding: 35px;
+    }
+
+    .why-image .floating-card {
+        width: min(100%, 420px);
+
+        padding: 32px;
+    }
+
+    .why-content {
+        text-align: center;
+    }
+
+    .why-section-tag {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .why-content > h2 {
+        max-width: 700px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .why-intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .features {
+        text-align: left;
+    }
+
+    .learn-more-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* ==========================================================
+   TABLET / LARGE MOBILE — 768px
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .why-choose-us {
+        padding: 75px 0;
+    }
+
+    .why-container {
+        width: min(92%, 620px);
+
+        gap: 45px;
+    }
+
+    /* Compact experience section */
+
+    .why-image {
+        min-height: 300px;
+
+        padding: 25px;
+
+        border-radius: 22px;
+    }
+
+    .why-image-glow {
+        width: 220px;
+        height: 220px;
+
+        top: -80px;
+        right: -70px;
+    }
+
+    .why-image .floating-card {
+        width: min(100%, 360px);
+
+        padding: 28px 22px;
+
+        border-radius: 18px;
+    }
+
+    .why-image .floating-card h2 {
+        font-size: 46px;
+    }
+
+    .why-image .floating-card p {
+        font-size: 15px;
+    }
+
+    .why-experience-caption {
+        gap: 7px;
+
+        margin-top: 16px;
+    }
+
+    .why-experience-caption span {
+        padding: 7px 11px;
+
+        font-size: 11px;
+    }
+
+    /* Content */
+
+    .why-content {
+        text-align: left;
+    }
+
+    .why-section-tag {
+        font-size: 12px;
+
+        padding: 9px 16px;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .why-content > h2 {
+        font-size: clamp(2.2rem, 7vw, 3rem);
+
+        line-height: 1.15;
+
+        letter-spacing: -0.4px;
+
+        margin-bottom: 22px;
+    }
+
+    .why-intro {
+        font-size: 16px;
+
+        line-height: 1.75;
+
+        margin-bottom: 30px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-bottom: 30px;
+    }
+
+    .feature {
+        padding: 17px;
+
+        gap: 13px;
+
+        border-radius: 14px;
+    }
+
+    .feature-icon {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+
+        border-radius: 10px;
+    }
+
+    .feature-icon svg {
+        font-size: 17px;
+    }
+
+    .feature-content h4 {
+        font-size: 18px;
+    }
+
+    .feature-content p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .learn-more-btn {
+        width: 100%;
+
+        min-height: 50px;
+    }
+}
+
+
+/* ==========================================================
+   MOBILE — 480px
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .why-choose-us {
+        padding: 60px 0;
+    }
+
+    .why-container {
+        width: 90%;
+
+        gap: 35px;
+    }
+
+    /* ------------------------------------------
+       EXPERIENCE PANEL
+    ------------------------------------------ */
+
+    .why-image {
+        min-height: 250px;
+
+        padding: 20px;
+
+        border-radius: 20px;
+    }
+
+    .why-image-pattern {
+        background-size: 30px 30px;
+    }
+
+    .why-image-glow {
+        width: 180px;
+        height: 180px;
+
+        top: -60px;
+        right: -60px;
+    }
+
+    .why-experience-label {
+        padding: 7px 13px;
+
+        margin-bottom: 15px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.7px;
+    }
+
+    .why-image .floating-card {
+        width: 100%;
+
+        padding: 23px 18px;
+
+        border-radius: 16px;
+    }
+
+    .why-image .floating-card h2 {
+        font-size: 40px;
+    }
+
+    .why-image .floating-card p {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+    .why-experience-caption {
+        margin-top: 12px;
+
+        gap: 5px;
+    }
+
+    .why-experience-caption span {
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+
+    /* ------------------------------------------
+       CONTENT
+    ------------------------------------------ */
+
+    .why-section-tag {
+        padding: 8px 14px;
+
+        margin-bottom: 16px;
+
+        font-size: 10px;
+
+        letter-spacing: 0.5px;
+    }
+
+    .why-content > h2 {
+        font-size: 2.15rem;
+
+        line-height: 1.16;
+
+        letter-spacing: -0.3px;
+
+        margin-bottom: 18px;
+    }
+
+    .why-intro {
+        font-size: 15.5px;
+
+        line-height: 1.7;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ------------------------------------------
+       FEATURES
+    ------------------------------------------ */
+
+    .features {
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+    .feature {
+        width: 100%;
+
+        padding: 15px;
+
+        gap: 11px;
+
+        align-items: flex-start;
+    }
+
+    .feature-icon {
+        width: 38px;
+        height: 38px;
+
+        flex: 0 0 38px;
+
+        border-radius: 9px;
+    }
+
+    .feature-icon svg {
+        font-size: 15px;
+    }
+
+    .feature-content h4 {
+        font-size: 17px;
+
+        line-height: 1.35;
+
+        margin-bottom: 5px;
+    }
+
+    .feature-content p {
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .learn-more-btn {
+        width: 100%;
+
+        padding: 14px 20px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE — 360px
+========================================================== */
+
+@media (max-width: 360px) {
+
+    .why-choose-us {
+        padding: 50px 0;
+    }
+
+    .why-container {
+        width: 92%;
+
+        gap: 30px;
+    }
+
+    .why-image {
+        min-height: 225px;
+
+        padding: 16px;
+    }
+
+    .why-image .floating-card {
+        padding: 20px 14px;
+    }
+
+    .why-image .floating-card h2 {
+        font-size: 36px;
+    }
+
+    .why-image .floating-card p {
+        font-size: 13px;
+    }
+
+    .why-experience-caption span {
+        font-size: 8px;
+
+        padding: 5px 7px;
+    }
+
+    .why-content > h2 {
+        font-size: 1.9rem;
+    }
+
+    .why-intro {
+        font-size: 15px;
+    }
+
+    .feature {
+        padding: 13px;
+    }
+
+    .feature-icon {
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
+    }
+
+    .feature-content h4 {
+        font-size: 16px;
+    }
+
+    .feature-content p {
+        font-size: 13.5px;
+    }
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.learn-more-btn:focus-visible {
+    outline: 3px solid rgba(212, 175, 55, 0.5);
+
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   REDUCE MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .feature,
+    .learn-more-btn {
+        transition: none;
+    }
 }
