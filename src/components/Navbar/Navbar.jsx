@@ -19,6 +19,10 @@ function Navbar() {
 
   const dropdownRef = useRef(null);
 
+  /* ==========================================================
+     SCROLL DETECTION
+  ========================================================== */
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -26,8 +30,14 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  /* ==========================================================
+     CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+  ========================================================== */
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,9 +51,33 @@ function Navbar() {
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    return () =>
+    return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
+
+  /* ==========================================================
+     ESCAPE KEY
+  ========================================================== */
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  /* ==========================================================
+     NAVIGATION DATA
+  ========================================================== */
 
   const navLinks = [
     { name: "Home", to: "home" },
@@ -64,10 +98,18 @@ function Navbar() {
     "Risk Management & Compliance",
   ];
 
+  /* ==========================================================
+     CLOSE ALL MENUS
+  ========================================================== */
+
   const closeMenus = () => {
     setMenuOpen(false);
     setServicesOpen(false);
   };
+
+  /* ==========================================================
+     SERVICE CLICK
+  ========================================================== */
 
   const handleServiceClick = (index) => {
     closeMenus();
@@ -79,74 +121,106 @@ function Navbar() {
     );
   };
 
+  /* ==========================================================
+     MOBILE MENU TOGGLE
+  ========================================================== */
+
+  const toggleMobileMenu = () => {
+    setMenuOpen((previous) => !previous);
+    setServicesOpen(false);
+  };
+
   return (
     <>
-      {/* ================= TOP BAR ================= */}
+      {/* ======================================================
+          TOP INFORMATION BAR
+      ====================================================== */}
 
       <div className="top-bar">
-
         <div className="top-container">
 
-          <div className="top-left">
+          {/* Office Address */}
 
-            <FaMapMarkerAlt />
+          <div className="top-left">
+            <FaMapMarkerAlt aria-hidden="true" />
 
             <span>
               B/16, Grace Plaza, Off S.V. Road, Agarwal Estate,
               Jogeshwari (W), Mumbai
             </span>
-
           </div>
+
+          {/* Contact Information */}
 
           <div className="top-right">
 
-            <a href="tel:+917620144726">
-
-              <FaPhoneAlt />
-
-              <span>076201 44726</span>
-
+            <a
+              href="tel:+919833788522"
+              aria-label="Call H Usman and Company"
+            >
+              <FaPhoneAlt aria-hidden="true" />
+              <span>98337 88522</span>
             </a>
 
-            <a href="mailto:ca.husman@gmail.com">
-
-              <FaEnvelope />
-
-              <span>ca.husman@gmail.com</span>
-
+            <a
+              href="mailto:cahanifusman@gmail.com"
+              aria-label="Email H Usman and Company"
+            >
+              <FaEnvelope aria-hidden="true" />
+              <span>cahanifusman@gmail.com</span>
             </a>
 
           </div>
 
         </div>
-
       </div>
 
-      {/* ================= NAVBAR ================= */}
+      {/* ======================================================
+          MAIN NAVBAR
+      ====================================================== */}
 
-      <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+      <nav
+        className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}
+        aria-label="Main navigation"
+      >
 
         <div className="nav-container">
 
-          {/* Logo */}
+          {/* ==================================================
+              PREMIUM BRAND LOGO
+          ================================================== */}
 
-          <div className="logo">
-
+          <Link
+            to="home"
+            smooth
+            duration={600}
+            offset={-90}
+            className="logo"
+            aria-label="H Usman and Company - Home"
+            onClick={closeMenus}
+          >
             <img
               src={logo}
-              alt="H Usman & Co Chartered Accountants"
+              alt="H Usman & Co. Chartered Accountants"
+              className="navbar-logo"
+              loading="eager"
+              decoding="async"
             />
+          </Link>
 
-          </div>
+          {/* ==================================================
+              NAVIGATION LINKS
+          ================================================== */}
 
-          {/* Navigation */}
+          <ul
+            id="main-navigation"
+            className={`nav-links ${menuOpen ? "active" : ""}`}
+          >
 
-          <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+            {/* Home + About */}
 
             {navLinks.slice(0, 2).map((item) => (
-
               <li key={item.to}>
-
                 <Link
                   to={item.to}
                   smooth
@@ -158,12 +232,12 @@ function Navbar() {
                 >
                   {item.name}
                 </Link>
-
               </li>
-
             ))}
 
-            {/* Services Dropdown */}
+            {/* ==================================================
+                SERVICES DROPDOWN
+            ================================================== */}
 
             <li
               className="dropdown-parent"
@@ -173,30 +247,31 @@ function Navbar() {
             >
 
               <button
-                className="dropdown-trigger"
                 type="button"
+                className="dropdown-trigger"
+                aria-haspopup="true"
                 aria-expanded={servicesOpen}
-                aria-label="Services Menu"
-                onClick={() => setServicesOpen(!servicesOpen)}
+                aria-label="Open Services menu"
+                onClick={() => setServicesOpen((previous) => !previous)}
               >
-                Services
+                <span>Services</span>
 
                 <FaChevronDown
                   className={`dropdown-icon ${
                     servicesOpen ? "rotate" : ""
                   }`}
+                  aria-hidden="true"
                 />
-
               </button>
 
               <ul
                 className={`dropdown-menu ${
                   servicesOpen ? "show" : ""
                 }`}
+                aria-hidden={!servicesOpen}
               >
 
                 {serviceLinks.map((service, index) => (
-
                   <li key={service}>
 
                     <Link
@@ -210,15 +285,15 @@ function Navbar() {
                     </Link>
 
                   </li>
-
                 ))}
 
               </ul>
 
             </li>
 
-            {navLinks.slice(2).map((item) => (
+            {/* Remaining navigation links */}
 
+            {navLinks.slice(2).map((item) => (
               <li key={item.to}>
 
                 <Link
@@ -234,12 +309,13 @@ function Navbar() {
                 </Link>
 
               </li>
-
             ))}
 
           </ul>
 
-          {/* CTA */}
+          {/* ==================================================
+              DESKTOP CTA
+          ================================================== */}
 
           <Link
             to="contact"
@@ -247,25 +323,35 @@ function Navbar() {
             duration={600}
             offset={-90}
             className="schedule-btn"
+            onClick={closeMenus}
           >
             Book Consultation
           </Link>
 
-          {/* Mobile Button */}
+          {/* ==================================================
+              MOBILE MENU BUTTON
+          ================================================== */}
 
           <button
+            type="button"
             className="menu-toggle"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Navigation"
+            onClick={toggleMobileMenu}
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
             aria-expanded={menuOpen}
+            aria-controls="main-navigation"
           >
-
-            {menuOpen ? <FaTimes /> : <FaBars />}
-
+            {menuOpen ? (
+              <FaTimes aria-hidden="true" />
+            ) : (
+              <FaBars aria-hidden="true" />
+            )}
           </button>
 
         </div>
-
       </nav>
     </>
   );

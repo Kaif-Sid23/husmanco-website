@@ -1,5 +1,6 @@
 import "./Hero.css";
 import founder from "../../assets/images/founder.png";
+
 import {
   FaCheckCircle,
   FaArrowRight,
@@ -14,23 +15,43 @@ function Hero() {
   return (
     <section className="hero" id="home">
 
-      {/* Background Shapes */}
+      {/* =====================================================
+          BACKGROUND DECORATION
+      ====================================================== */}
 
-      <div className="hero-circle hero-circle-1"></div>
-      <div className="hero-circle hero-circle-2"></div>
-      <div className="hero-grid"></div>
+      <div
+        className="hero-circle hero-circle-1"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        className="hero-circle hero-circle-2"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        className="hero-grid"
+        aria-hidden="true"
+      ></div>
+
+
+      {/* =====================================================
+          MAIN HERO CONTAINER
+      ====================================================== */}
 
       <div className="hero-container">
 
-        {/* ===========================
-                LEFT CONTENT
-        ============================ */}
+        {/* ===================================================
+            LEFT CONTENT
+        ==================================================== */}
 
         <div className="hero-left">
 
+          {/* Trust Badge */}
+
           <div className="hero-tag">
 
-            <FaAward />
+            <FaAward aria-hidden="true" />
 
             <span>
               TRUSTED CHARTERED ACCOUNTANTS
@@ -38,20 +59,29 @@ function Hero() {
 
           </div>
 
+
+          {/* Main Heading */}
+
           <h1>
 
             Helping Businesses
 
-            <span> Grow with Confidence.</span>
+            <span>
+              Grow with Confidence.
+            </span>
 
           </h1>
 
-          <h3>
 
+          {/* Service Summary */}
+
+          <h3>
             Chartered Accountancy • GST • Audit • Taxation •
             Regulatory Compliance • Business Advisory
-
           </h3>
+
+
+          {/* Company Introduction */}
 
           <p>
 
@@ -59,11 +89,15 @@ function Hero() {
             managed Chartered Accountancy firm established in
             2020 and led by <strong>Mr. Hanif Usman</strong>,
             bringing more than
-            <strong> 21 years of Banking, Finance,
-            Credit Risk, Regulatory Compliance and
-            Business Advisory experience.</strong>
 
-            <br /><br />
+            <strong>
+              {" "}21 years of Banking, Finance,
+              Credit Risk, Regulatory Compliance and
+              Business Advisory experience.
+            </strong>
+
+            <br />
+            <br />
 
             We don't just help businesses remain compliant —
             we help them make informed financial decisions,
@@ -71,49 +105,62 @@ function Hero() {
 
           </p>
 
-          {/* ===========================
-                  TRUST POINTS
-          ============================ */}
+
+          {/* =================================================
+              TRUST POINTS
+          ================================================== */}
 
           <div className="hero-highlights">
 
             <div className="highlight">
 
-              <FaCheckCircle />
+              <FaCheckCircle aria-hidden="true" />
 
-              <span>21+ Years Professional Experience</span>
-
-            </div>
-
-            <div className="highlight">
-
-              <FaCheckCircle />
-
-              <span>Business-Focused Financial Solutions</span>
+              <span>
+                21+ Years Professional Experience
+              </span>
 
             </div>
 
+
             <div className="highlight">
 
-              <FaCheckCircle />
+              <FaCheckCircle aria-hidden="true" />
 
-              <span>Trusted Banking & Finance Expertise</span>
+              <span>
+                Business-Focused Financial Solutions
+              </span>
 
             </div>
 
+
             <div className="highlight">
 
-              <FaCheckCircle />
+              <FaCheckCircle aria-hidden="true" />
 
-              <span>Serving SMEs, Corporates & Startups</span>
+              <span>
+                Trusted Banking & Finance Expertise
+              </span>
+
+            </div>
+
+
+            <div className="highlight">
+
+              <FaCheckCircle aria-hidden="true" />
+
+              <span>
+                Serving SMEs, Corporates & Startups
+              </span>
 
             </div>
 
           </div>
 
-          {/* ===========================
-                  SERVICE TAGS
-          ============================ */}
+
+          {/* =================================================
+              SERVICE TAGS
+          ================================================== */}
 
           <div className="service-tags">
 
@@ -135,9 +182,10 @@ function Hero() {
 
           </div>
 
-          {/* ===========================
-                    BUTTONS
-          ============================ */}
+
+          {/* =================================================
+              ACTION BUTTONS
+          ================================================== */}
 
           <div className="hero-buttons">
 
@@ -145,29 +193,25 @@ function Hero() {
               href="#contact"
               className="primary-btn"
             >
-
-              Book Consultation
-
-              <FaArrowRight />
-
+              <span>Book Consultation</span>
+              <FaArrowRight aria-hidden="true" />
             </a>
 
+
             <a
-              href="tel:+917620144726"
+              href="tel:+919833788522"
               className="secondary-btn"
             >
-
-              <FaPhoneAlt />
-
-              Call Now
-
+              <FaPhoneAlt aria-hidden="true" />
+              <span>Call Now</span>
             </a>
 
           </div>
 
-          {/* ===========================
-                     STATS
-          ============================ */}
+
+          {/* =================================================
+              STATS
+          ================================================== */}
 
           <div className="stats">
 
@@ -176,57 +220,48 @@ function Hero() {
               <h2>21+</h2>
 
               <p>
-
                 Years of
                 <br />
-
                 Professional Experience
-
               </p>
 
             </div>
+
 
             <div className="stat-box">
 
               <h2>2020</h2>
 
               <p>
-
                 Established
                 <br />
-
                 Since
-
               </p>
 
             </div>
+
 
             <div className="stat-box">
 
               <h2>12+</h2>
 
               <p>
-
                 Industries
                 <br />
-
                 Served
-
               </p>
 
             </div>
+
 
             <div className="stat-box">
 
               <h2>100%</h2>
 
               <p>
-
                 Client
                 <br />
-
                 Commitment
-
               </p>
 
             </div>
@@ -235,33 +270,43 @@ function Hero() {
 
         </div>
 
-        {/* ===========================
-                RIGHT CONTENT
-        ============================ */}
-                <div className="hero-right">
+
+        {/* ===================================================
+            RIGHT CONTENT — FOUNDER IMAGE
+        ==================================================== */}
+
+        <div className="hero-right">
 
           <div className="hero-image-wrapper">
 
-            {/* Decorative Badge */}
+
+            {/* Trusted Advisor Badge */}
 
             <div className="hero-badge">
 
-              <FaShieldAlt />
+              <FaShieldAlt aria-hidden="true" />
 
-              <span>Trusted Business Advisor</span>
+              <span>
+                Trusted Business Advisor
+              </span>
 
             </div>
+
 
             {/* Founder Image */}
 
             <img
-src={founder}
-alt="Portrait of Mr. Hanif Usman, Chartered Accountant"
-className="founder-image"
-loading="eager"
-decoding="async"
-/>
-            {/* Experience Card */}
+              src={founder}
+              alt="Portrait of Mr. Hanif Usman, Chartered Accountant"
+              className="founder-image"
+              loading="eager"
+              decoding="async"
+            />
+
+
+            {/* =================================================
+                EXPERIENCE CARD
+            ================================================== */}
 
             <div className="floating-card experience-card">
 
@@ -269,22 +314,29 @@ decoding="async"
 
               <span>
                 Years of Banking &
+                <br />
                 Financial Expertise
               </span>
 
             </div>
 
-            {/* Banking Experience */}
+
+            {/* =================================================
+                PROFESSIONAL JOURNEY CARD
+            ================================================== */}
 
             <div className="floating-card banking-card">
 
               <div className="card-title">
 
-                <FaUniversity />
+                <FaUniversity aria-hidden="true" />
 
-                <span>Professional Journey</span>
+                <span>
+                  Professional Journey
+                </span>
 
               </div>
+
 
               <ul>
 
@@ -300,24 +352,25 @@ decoding="async"
 
             </div>
 
-            {/* Advisory Card */}
+
+            {/* =================================================
+                BUSINESS ADVISORY CARD
+            ================================================== */}
 
             <div className="floating-card advisory-card">
 
-              <FaBriefcase />
+              <FaBriefcase aria-hidden="true" />
 
               <div>
 
-                <h4>Business Advisory</h4>
+                <h4>
+                  Business Advisory
+                </h4>
 
                 <p>
-
                   Audit • GST • Taxation
-
                   <br />
-
                   Compliance • Finance
-
                 </p>
 
               </div>
@@ -331,9 +384,7 @@ decoding="async"
       </div>
 
     </section>
-
   );
-
 }
 
 export default Hero;

@@ -51,7 +51,7 @@ function Contact() {
             <FaPhoneAlt />
             <div>
               <h4>Call Us</h4>
-              <p><a href="tel:+917620144726">076201 44726</a></p>
+              <p><a href="tel:+917620144726">98337 88522</a></p>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ function Contact() {
             <FaEnvelope />
             <div>
               <h4>Email Us</h4>
-              <p><a href="mailto:ca.husman@gmail.com">ca.husman@gmail.com</a></p>
+              <p><a href="mailto:Cahanifusman@gmail.com">Cahanifusman@gmail.com</a></p>
             </div>
           </div>
 

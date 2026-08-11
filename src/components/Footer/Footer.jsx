@@ -44,8 +44,8 @@ function Footer() {
           <h4>Contact</h4>
           <ul className="footer-contact">
             <li><FaMapMarkerAlt /> B/16, Grace Plaza, Off S V Road, Agarwal Estate, Jogeshwari (W), Mumbai – 400 102</li>
-            <li><FaPhoneAlt /> <a href="tel:+917620144726">076201 44726</a></li>
-            <li><FaEnvelope /> <a href="mailto:ca.husman@gmail.com">ca.husman@gmail.com</a></li>
+            <li><FaPhoneAlt /> <a href="tel:+98337 88522"> 98337 88522</a></li>
+            <li><FaEnvelope /> <a href="mailto:cahanifusman@gmail.com">cahanifusman@gmail.com</a></li>
           </ul>
         </div>
 
